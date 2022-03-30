@@ -3,7 +3,7 @@ function Ip() {
     const [users, setUsers] = useState([])
     useEffect(async () => {
         try {
-            let items = await fetch("http://ip-api.com/json/");
+            let items = await fetch("http://api.ipstack.com/103.163.248.150?access_key=3c9fa702d7172d0da46dc469e76128f3");
             let userdata = await items.json()
             setUsers(userdata)
             console.log(userdata)
