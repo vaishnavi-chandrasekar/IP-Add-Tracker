@@ -3,7 +3,7 @@ function Ip() {
     const [users, setUsers] = useState([])
     useEffect(async () => {
         try {
-            let items = await fetch("http://api.ipstack.com/103.163.248.150?access_key=3c9fa702d7172d0da46dc469e76128f3");
+            let items = await fetch("https://ipfind.co/?ip=103.163.248.47&auth=714b1e54-571f-4775-bed7-e066538053b0");
             let userdata = await items.json()
             setUsers(userdata)
             console.log(userdata)
@@ -25,14 +25,14 @@ function Ip() {
                 <div id='find'>
                     {users && <ul>
 
-                        <b> <li>IP : {`${users.query}`}</li>
+                        <b> <li>IP : {`${users.ip_address}`}</li>
                             <li>Country Name : {`${users.country}`}</li>
-                            <li>Country Code : {`${users.countryCode}`}</li>
-                            <li>City : {`${users.city}`}</li>
-                            <li>Postal Code : {`${users.zip}`}</li>
-                            <li>Latitude : {`${users.lat}`}</li>
-                            <li> Longitude : {`${users.lon}`}</li>
-                            <li>State : {`${users.regionName}`}</li></b>
+                            <li>Country Code : {`${users.country_code}`}</li>
+                            <li>City : {`${users.county}`}</li>
+                            <li>Postal Code : {`${users.postal_code}`}</li>
+                            <li>Latitude : {`${users.latitude}`}</li>
+                            <li> Longitude : {`${users.longitude}`}</li>
+                            <li>State : {`${users.region}`}</li></b>
                     </ul>}
 
                 </div>
